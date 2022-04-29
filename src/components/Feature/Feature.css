@@ -39,15 +39,16 @@
 }
 
 .feature__text button {
-    display: inline-block;
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 120px;
-    background-color: #ff0000;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
+	display: inline-block;
+	border: none;
+	outline: none;
+	height: 50px;
+	width: 170px;
+	font-size: 14px;
+	background-color: #ff0000;
+	color: #fff;
+	font-weight: 500;
+	cursor: pointer;
 }
 
 .feature__detail {

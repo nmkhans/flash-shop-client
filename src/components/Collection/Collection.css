@@ -1,0 +1,23 @@
+.Collection {
+    padding: 80px 0;
+}
+
+.collection__title {
+    text-align: center;
+}
+
+.collection__title h2 {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 3px solid red;
+    padding-bottom: 5px;
+}
+
+.collection__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}

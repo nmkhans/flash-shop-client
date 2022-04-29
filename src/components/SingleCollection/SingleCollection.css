@@ -1,0 +1,44 @@
+.SingleCollection {
+    background: #161515;
+}
+
+.singleCollection__feature img {
+    width: 100%;
+}
+
+.singleCollection__detail {
+    padding: 20px 30px;
+}
+
+.singleCollection__detail h3 {
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.collection__price {
+    font-size: 22px;
+    color: #fafafa;
+    margin-bottom: 5px;
+}
+
+.collection__desc {
+    color: #d3d5d5; 
+    margin-top: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.singleCollection__detail button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 130px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}

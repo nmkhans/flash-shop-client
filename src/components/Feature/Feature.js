@@ -12,7 +12,7 @@ const Feature = () => {
                             <h2>All The leatest collection in one house.</h2>
                             <div className="feature__text">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget. </p>
-                                <button>Browser Cars</button>
+                                <button>Browser Collection</button>
                             </div>
                         </div>
                         <div className="feature__detail">
@@ -20,7 +20,6 @@ const Feature = () => {
                             <div className="feature__detail__desc">
                                 <div className="feature__detail__desc__box">
                                     <h3>What We Do</h3>
-                                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> */}
                                     <p>We have the collection of all kind of cars. We keep variation of cars. You can take your car or add of your own choise.</p>
                                 </div>
                                 <div className="feature__detail__desc__box">

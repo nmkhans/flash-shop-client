@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../components/Banner/Banner';
+import Collection from '../../components/Collection/Collection';
 import Feature from './../../components/Feature/Feature';
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div className="Home">
             <Banner />
             <Feature />
+            <Collection />
         </div>
     );
 };

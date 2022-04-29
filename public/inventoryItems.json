@@ -1,0 +1,50 @@
+[
+    {
+        "name": "White Rocket",
+        "img": "https://i.ibb.co/kGNqvgd/bmw.jpg",
+        "description": "White rocket car by BMW. As fas as rocket but on road. Your personal rocket on four wheel",
+        "price": 190000,
+        "quantity": 5,
+        "supplier": "BMW"
+    },
+    {
+        "name": "Dark Ring",
+        "img": "https://i.ibb.co/F3GsnfS/audi.jpg",
+        "description": "Dark ring by Audi. Best for speed drive. Super fast ultra sonic speed. Real smooth.",
+        "price": 90000,
+        "quantity": 8,
+        "supplier": "Audi"
+    },
+    {
+        "name": "Sharp Wave",
+        "img": "https://i.ibb.co/cLD0Rgz/ferarri.jpg",
+        "description": "Sharp wave by ferarri. The speed of wave on your four wheel car. Best experience on beach side driving.",
+        "price": 140000,
+        "quantity": 4,
+        "supplier": "Audi"
+    },
+    {
+        "name": "Sun Shine",
+        "img": "https://i.ibb.co/T8XFvvF/fond.jpg",
+        "description": "Sun Shine by Fond. Speed close to light. super fast driving. ultra smooth experience.",
+        "price": 170000,
+        "quantity": 6,
+        "supplier": "Ford"
+    },
+    {
+        "name": "Marqure Sedies",
+        "img": "https://i.ibb.co/6tMq6yQ/marcedes.jpg",
+        "description": "Marqure Sedies by Marcedes. As hot as name. Super fast speed on road. Alse best for off road driving.",
+        "price": 120000,
+        "quantity": 3,
+        "supplier": "Marcedes"
+    },
+    {
+        "name": "Lambo Vijlante",
+        "img": "https://i.ibb.co/RbhhgT5/lamborgini.jpg",
+        "description": "Lambo Vijlante by Lamborgini. Car that talk with sonic speed. Super fast sonic speed. Smooth driving",
+        "price": 190000,
+        "quantity": 7,
+        "supplier": "Lamborgini"
+    }
+]
