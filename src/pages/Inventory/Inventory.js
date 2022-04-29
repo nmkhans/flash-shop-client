@@ -4,14 +4,31 @@ import { useParams } from 'react-router-dom';
 
 const Inventory = () => {
     const [inventoryItem, setInventoryItem] = useState({});
+    const [res, setRes] = useState({});
     const { id } = useParams();
-    useState(() => {
+    useEffect(() => {
         fetch(`http://localhost:5000/cars/${id}`)
             .then(res => res.json())
             .then(data => setInventoryItem(data));
-    }, []);
+    }, [id, res]);
 
     const { name, img, description, price, quantity, supplier } = inventoryItem;
+
+    const handleDeliver = () => {
+        const newQuantity = {
+            quantity: (quantity - 1)
+        };
+        const url = `http://localhost:5000/cars/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newQuantity),
+        })
+        .then(res => res.json())
+        .then(data => setRes(data));
+    }
 
     return (
         <div className="Inventory">
@@ -28,7 +45,7 @@ const Inventory = () => {
                             <p className="inventory__detail__brand">Brand: {supplier}</p>
                             <p className="inventory__detail__desc">{description}</p>
                             <div className="inventory__button">
-                                <button>Delivered</button>
+                                <button onClick={handleDeliver}>Delivered</button>
                                 <button>Restock</button>
                             </div>
                         </div>
