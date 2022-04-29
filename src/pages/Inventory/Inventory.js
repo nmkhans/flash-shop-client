@@ -9,20 +9,21 @@ const Inventory = () => {
 
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${id}`)
+        fetch(`http://localhost:5000/inventory/${id}`)
             .then(res => res.json())
             .then(data => setInventoryItem(data));
     }, [id, res]);
 
     const { name, img, description, price, quantity, supplier } = inventoryItem;
 
+    //? Handle Delivery operation
     const handleDeliver = () => {
         if (quantity > 0) {
             const newQuantity = {
                 quantity: (quantity - 1)
             };
 
-            const url = `http://localhost:5000/cars/${id}`;
+            const url = `http://localhost:5000/inventory/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -35,14 +36,15 @@ const Inventory = () => {
         }
     }
 
-    const HandleForm = (event) => {
+    //? Handle restock submittion
+    const handleForm = (event) => {
         event.preventDefault();
         const amount = parseInt(event.target.amount.value);
         const newQuantity = {
             quantity: (quantity + amount),
         }
         console.log(newQuantity)
-        const url = `http://localhost:5000/cars/${id}`;
+        const url = `http://localhost:5000/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -76,7 +78,7 @@ const Inventory = () => {
                     </div>
                     {reStock && (
                         <div className="inventory__restock">
-                            <form onSubmit={HandleForm}>
+                            <form onSubmit={handleForm}>
                                 <div className="inventory__restock__field">
                                     <input type="number" name="amount" placeholder="Enter Amount" />
                                 </div>

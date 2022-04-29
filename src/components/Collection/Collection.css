@@ -21,3 +21,16 @@
     grid-gap: 30px;
     margin-top: 50px;
 }
+
+.collection__button {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.collection__button a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    background: #ff0000;
+    color: #fff;
+}

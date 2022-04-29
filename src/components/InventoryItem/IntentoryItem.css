@@ -1,0 +1,47 @@
+.inventoryItem__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff0000;
+    padding-bottom: 30px;
+}
+
+.inventoryItem__feature img {
+    width: 150px;
+}
+
+.inventoryItem__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+
+.inventoryItem__title h4 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.inventoryItem__description p {
+    font-size: 17px;
+}
+
+.inventoryItem__button button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inventoryItem__button button span {
+    display: inline-block;
+    margin: 0 2px;
+}

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './Collection.css';
 import SingleCollection from './../SingleCollection/SingleCollection';
+import { Link } from 'react-router-dom';
 
 const Collection = () => {
     const [carsCollection, setCarsCollection] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('http://localhost:5000/inventory')
         .then(res => res.json())
         .then(data => setCarsCollection(data))
     }, [])
@@ -22,6 +23,9 @@ const Collection = () => {
                     {
                         newCollection.map(collection => <SingleCollection key={collection._id} collection={collection} />)
                     }
+                </div>
+                <div className="collection__button">
+                    <Link to="/manage-inventory">Manage Inventory</Link>
                 </div>
             </div>
         </div>
