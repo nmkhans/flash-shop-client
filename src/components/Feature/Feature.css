@@ -1,0 +1,93 @@
+.feature__content {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+}
+
+.feature__title {
+    padding: 50px 70px;
+    clear: both;
+    overflow: hidden;
+}
+
+.feature__title h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.feature__title h2 {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 500;
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feature__text {
+    width: 380px;
+    float: right;
+}
+
+.feature__text p {
+    color: #d3d5d5;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 28px;
+    margin-bottom: 30px
+}
+
+.feature__text button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 120px;
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.feature__detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.feature__detail__img {
+    background: url('https://i.ibb.co/V247790/best-collection-2.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+}
+
+.feature__detail__desc {
+    background: #161515;
+    padding: 50px;
+}
+
+.feature__detail__desc__box {
+    margin-bottom: 30px;
+}
+
+.feature__detail__desc__box h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color:#fafafa;
+}
+
+.feature__detail__desc__box p {
+    color: #d3d5d5;
+    font-size: 16px;
+}
+
+.feature__right {
+    background: url('https://i.ibb.co/y6GfxDs/best-collection.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+}
