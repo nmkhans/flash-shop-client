@@ -7,10 +7,18 @@ const ManageInventory = () => {
 
     useEffect(() => {
         fetch('http://localhost:5000/inventory')
-        .then(res => res.json())
-        .then(data => setInventory(data))
+            .then(res => res.json())
+            .then(data => setInventory(data))
     }, [])
 
+    const handleDelete = (id) => {
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: "Delete"
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
 
     return (
         <div className="ManageInventory">
@@ -20,7 +28,7 @@ const ManageInventory = () => {
                 </div>
                 <div className="manageInventory__content">
                     {
-                        inventory.map(item => <InventoryItem key={item._id} item={item} />)
+                        inventory.map(item => <InventoryItem key={item._id} item={item} handleDelete={handleDelete} />)
                     }
                 </div>
             </div>

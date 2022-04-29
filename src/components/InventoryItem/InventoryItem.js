@@ -1,12 +1,13 @@
 import React from 'react';
 import './IntentoryItem.css';
-import {FaTrashAlt} from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const InventoryItem = ({item}) => {
+const InventoryItem = ({ item, handleDelete }) => {
     const { name, img, price, quantity, supplier, _id } = item;
-
-    const handleDelete = (id) => {
-        
+    const navigate = useNavigate();
+    const toManage = (id) => {
+        navigate(`/inventory/${id}`);
     }
 
     return (
@@ -31,6 +32,7 @@ const InventoryItem = ({item}) => {
                         </span>
                     </div>
                     <div className="inventoryItem__button">
+                        <button onClick={() => toManage(_id)}>Manage</button>
                         <button onClick={() => handleDelete(_id)}><span>Delete</span><span><FaTrashAlt /></span></button>
                     </div>
                 </div>

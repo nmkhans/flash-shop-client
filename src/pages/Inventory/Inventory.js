@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Inventory.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Inventory = () => {
     const [inventoryItem, setInventoryItem] = useState({});
     const [res, setRes] = useState({});
     const [reStock, setReStock] = useState(false);
+    const navigate = useNavigate();
 
     const { id } = useParams();
     useEffect(() => {
@@ -52,8 +53,8 @@ const Inventory = () => {
             },
             body: JSON.stringify(newQuantity)
         })
-        .then(res => res.json())
-        .then(data => setRes(data))
+            .then(res => res.json())
+            .then(data => setRes(data))
     }
 
     return (
@@ -71,8 +72,13 @@ const Inventory = () => {
                             <p className="inventory__detail__brand">Brand: {supplier}</p>
                             <p className="inventory__detail__desc">{description}</p>
                             <div className="inventory__button">
-                                <button onClick={handleDeliver}>Delivered</button>
-                                <button onClick={() => setReStock(!reStock)}>Restock</button>
+                                <div className="inventory__button__top">
+                                    <button onClick={() => setReStock(!reStock)}>Restock</button>
+                                    <button onClick={() => navigate('/manage-inventory')}>Manage Inventory</button>
+                                </div>
+                                <div className="inventory__button__botttom">
+                                    <button onClick={handleDeliver}>Delivered</button>
+                                </div>
                             </div>
                         </div>
                     </div>
