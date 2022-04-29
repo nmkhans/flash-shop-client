@@ -1,0 +1,82 @@
+.Inventory {
+    padding: 80px 0;
+}
+
+.inventory__content {
+    border: 1px solid #ff0000;
+    background: #161515;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+.inventory__content__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.inventory__feature {
+    width: 400px;
+}
+
+.inventory__feature img {
+    width: 100%;
+    border-radius: 10px
+}
+
+.inventory__detail {
+    width: 450px;
+}
+
+.inventory__detail h3 {
+    font-size: 30px;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.inventory__detail__price {
+    font-size: 22px;
+    color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.inventory__detail__stock {
+    font-size: 18px;
+}
+
+.inventory__detail__brand {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.inventory__detail__desc {
+    color: #d3d5d5; 
+    width: 300px;
+    text-align: justify;
+    word-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.inventory__button button {
+    display: block;
+    height: 40px;
+    width: 60%;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.inventory__button button:nth-child(1) {
+    background: #ff0000;
+    color: #fff;
+}
+
+.inventory__button button:nth-child(2) {
+    background: #fafafa;
+}
