@@ -22,7 +22,7 @@ const Login = () => {
                     <form onSubmit={handleLogin}>
                         <div className="login__form">
                             <div className="input__group">
-                                <label htmlFor="name">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input type="email" name="email" id="email" placeholder="Enter Email" />
                             </div>
                             <div className="input__group">

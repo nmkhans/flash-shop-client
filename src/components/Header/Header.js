@@ -49,7 +49,7 @@ const Header = () => {
                                                             <li>
                                                                 My Item
                                                             </li>
-                                                            <li>
+                                                            <li onClick={() => navigate('/add-item')}>
                                                                 Add Item
                                                             </li>
                                                             <li onClick={() => navigate('/manage-inventory')}>

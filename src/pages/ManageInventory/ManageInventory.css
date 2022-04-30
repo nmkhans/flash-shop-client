@@ -15,6 +15,25 @@
     padding-bottom: 3px;
 }
 
+.managInventory__button {
+    text-align: right;
+    margin: 50px 0;
+}
+
+.managInventory__button button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 140px;
+    margin: 0 15px;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 .manageInventory__content {
     background: #161515;
     padding: 20px;

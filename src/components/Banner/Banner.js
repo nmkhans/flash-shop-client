@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css';
-import {HiOutlineArrowNarrowDown} from 'react-icons/hi';
+import { HiOutlineArrowNarrowDown } from 'react-icons/hi';
 
 const Banner = () => {
     return (
@@ -8,7 +8,6 @@ const Banner = () => {
             <div className="inner__banner__area container">
                 <div className="banner__content">
                     <h1>Best cars werehouse in the plannet.</h1>
-                    {/* <p>The haven of cars. Find the best car for you from the storage of best cars combination.</p> */}
                     <p>Weh have the best cars collection. This is the place to find your desire cars combination. The cars haven.</p>
                     <button>Discover More</button>
 
