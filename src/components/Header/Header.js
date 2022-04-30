@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import logo from './logo.png';
 import { Link } from 'react-router-dom';
 import LinkTo from '../LinkTo/LinkTo';
+import useFirebase from './../../hooks/useFirebase';
 
 const Header = () => {
+    const [menu, setMenu] = useState(false);
+    const { user } = useFirebase();
+    console.log(user)
     return (
         <div className="Header">
             <div className="inner__header container">
@@ -32,9 +36,39 @@ const Header = () => {
                             </ul>
                         </nav>
                         <div className="header__account">
-                            <div className="header__login__button">
-                                <button>Login</button>
-                            </div>
+                            {
+                                user?.uid ? (
+                                    <div className="header__profile">
+                                        <div onClick={() => setMenu(!menu)} className="profile__button">
+                                            <img src={user?.photoURL} alt="" />
+                                            {
+                                                menu && (
+                                                    <div className="profile__menu">
+                                                        <ul>
+                                                            <li>
+                                                                My Item
+                                                            </li>
+                                                            <li>
+                                                                Add Item
+                                                            </li>
+                                                            <li>
+                                                                Manage Item
+                                                            </li>
+                                                            <li>
+                                                                Logout
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="header__login__button">
+                                        <button>Login</button>
+                                    </div>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

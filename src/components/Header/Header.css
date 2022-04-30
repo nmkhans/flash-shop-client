@@ -53,3 +53,36 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.profile__button {
+    margin-top: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile__button img {
+	width: 60px;
+	border-radius: 50%;
+	border: 2px solid #f00;
+	padding: 4px;
+}
+
+.profile__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #161515;
+    width: 250px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.profile__menu ul {
+    list-style: none;
+}
+
+.profile__menu ul li {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
