@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './Header.css';
 import logo from './logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LinkTo from '../LinkTo/LinkTo';
 import useFirebase from './../../hooks/useFirebase';
 
 const Header = () => {
     const [menu, setMenu] = useState(false);
-    const { user } = useFirebase();
-    console.log(user)
+    const { user, handleSignOut } = useFirebase();
+    const navigate = useNavigate();
+
     return (
         <div className="Header">
             <div className="inner__header container">
@@ -54,7 +55,7 @@ const Header = () => {
                                                             <li>
                                                                 Manage Item
                                                             </li>
-                                                            <li>
+                                                            <li onClick={handleSignOut}>
                                                                 Logout
                                                             </li>
                                                         </ul>
@@ -65,7 +66,7 @@ const Header = () => {
                                     </div>
                                 ) : (
                                     <div className="header__login__button">
-                                        <button>Login</button>
+                                        <button onClick={() => navigate('/login')}>Login</button>
                                     </div>
                                 )
                             }
