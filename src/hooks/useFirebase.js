@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile  } from "firebase/auth";
 import auth from '../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const navigate = useNavigate()
 
     //? Observer
     useEffect(() => {
@@ -14,11 +16,16 @@ const useFirebase = () => {
 
 
     //? register user with email and password
-    const registerUser = (email, password) => {
+    const registerUser = (name, img, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             const user = result.user;
             setUser(user);
+            updateProfile(auth.currentUser, {
+                displayName: name,
+                photoURL: img,
+            });
+            navigate('/');
         })
     }
 
