@@ -52,7 +52,7 @@ const Header = () => {
                                                             <li>
                                                                 Add Item
                                                             </li>
-                                                            <li>
+                                                            <li onClick={() => navigate('/manage-inventory')}>
                                                                 Manage Item
                                                             </li>
                                                             <li onClick={handleSignOut}>

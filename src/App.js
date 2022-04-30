@@ -7,6 +7,7 @@ import Inventory from './pages/Inventory/Inventory';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 const App = () => {
   return (
@@ -14,8 +15,16 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/inventory/:id" element={<Inventory />} />
-        <Route path="/manage-inventory" element={<ManageInventory />} />
+        <Route path="/inventory/:id" element={
+          <RequireAuth>
+            <Inventory />
+          </RequireAuth>
+        } />
+        <Route path="/manage-inventory" element={
+          <RequireAuth>
+            <ManageInventory />
+          </RequireAuth>
+        } />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
