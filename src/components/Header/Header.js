@@ -41,12 +41,12 @@ const Header = () => {
                                 user?.uid ? (
                                     <div className="header__profile">
                                         <div onClick={() => setMenu(!menu)} className="profile__button">
-                                            <img src={user?.photoURL} alt="" />
+                                            <img src={user?.photoURL} alt="Profile Img" />
                                             {
                                                 menu && (
                                                     <div className="profile__menu">
                                                         <ul>
-                                                            <li>
+                                                            <li onClick={() => navigate('/my-item')}>
                                                                 My Item
                                                             </li>
                                                             <li onClick={() => navigate('/add-item')}>

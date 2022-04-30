@@ -7,6 +7,8 @@ import ManageInventory from './../../pages/ManageInventory/ManageInventory';
 import AddItem from '../../pages/AddItem/AddItem';
 import Register from './../../pages/Register/Register';
 import Login from './../../pages/Login/Login';
+import UserItem from '../../pages/UserItem/UserItem';
+
 
 const ApplicationRoutes = () => {
     return (
@@ -25,6 +27,11 @@ const ApplicationRoutes = () => {
             <Route path="/add-item" element={
                 <RequireAuth>
                     <AddItem />
+                </RequireAuth>
+            } />
+            <Route path="/my-item" element={
+                <RequireAuth>
+                    <UserItem />
                 </RequireAuth>
             } />
             <Route path="/register" element={<Register />} />
