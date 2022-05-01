@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddItem.css';
 import useFirebase from './../../hooks/useFirebase';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddItem = () => {
     const { user } = useFirebase();
+    const [res, setRes] = useState({});
+    const navigate = useNavigate();
+    console.log(res)
+
 
     const handleAddItem = (event) => {
         event.preventDefault();
@@ -25,10 +31,14 @@ const AddItem = () => {
             body: JSON.stringify(item)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
-
-
+        .then(data => {
+            setRes(data)
+            if(res.acknowledged === true) {
+                toast('Item Succeccfully Added');
+            }
+        })
         event.target.reset();
+        navigate('/manage-inventory')
     }
     return (
         <div className="AddItem">

@@ -21,3 +21,20 @@ body {
 h1,h2,h3,h4,h5,h6, p {
     color: #fff;
 }
+
+.toastContainer {
+    background: #161515 !important;
+}
+
+.toastProgress {
+    background: #ff0000 !important;
+}
+
+.toastBody {
+    color: #fff;
+}
+
+.Toastify__close-button--light {
+    color: #fff !important;
+    opacity: 1 !important;
+}

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import InventoryItem from '../../components/InventoryItem/InventoryItem';
 import './ManageInventory.css';
 import { useNavigate } from 'react-router-dom';
+import useAlert from './../../hooks/useAlert';
 
 const ManageInventory = () => {
     const [inventory, setInventory] = useState([]);
     const [res, setRes] = useState({});
+    const { MySwal } = useAlert();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,12 +17,31 @@ const ManageInventory = () => {
     }, [res])
 
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/inventory/${id}`;
-        fetch(url, {
-            method: "Delete"
+        MySwal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const url = `http://localhost:5000/inventory/${id}`;
+                fetch(url, {
+                    method: "Delete"
+                })
+                    .then(res => res.json())
+                    .then(data => setRes(data))
+                if (res) {
+                    MySwal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            }
         })
-        .then(res => res.json())
-        .then(data => setRes(data))
     }
 
     return (
