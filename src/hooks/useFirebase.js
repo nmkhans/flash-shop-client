@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from '../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
@@ -27,7 +29,8 @@ const useFirebase = () => {
                     displayName: name,
                     photoURL: img,
                 });
-                navigate('/');
+                toast('Registration successfull')
+                navigate(from, { replace: true });
             })
     }
 
@@ -37,6 +40,18 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
+                toast('Login Successfull')
+                navigate(from, { replace: true });
+            })
+    }
+
+    //? Login user with Google
+    const googleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                toast('Login Successfull')
                 navigate(from, { replace: true });
             })
     }
@@ -50,6 +65,7 @@ const useFirebase = () => {
         user,
         registerUser,
         loginUser,
+        googleSignIn,
         handleSignOut,
     };
 };

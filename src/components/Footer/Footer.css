@@ -1,0 +1,26 @@
+.Footer {
+    background: #161515;
+    padding: 10px 0;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 180px;
+}
+
+.footer__social ul li {
+    display: inline-block;
+    margin-left: -4px;
+}
+
+.footer__social ul li span {
+    color: #ff0000;
+    padding: 0 20px;
+    font-size: 20px;
+    cursor: pointer;
+}

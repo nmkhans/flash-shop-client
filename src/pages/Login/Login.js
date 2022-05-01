@@ -2,15 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import useFirebase from './../../hooks/useFirebase';
+import {FaGoogle} from 'react-icons/fa';
 
 const Login = () => {
-    const { loginUser } = useFirebase();
+    const { loginUser, googleSignIn } = useFirebase();
 
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         loginUser(email, password);
+    }
+
+    const handleGoogle = (event) => {
+        event.preventDefault();
+        googleSignIn();
     }
     return (
         <div className="Login">
@@ -34,6 +40,10 @@ const Login = () => {
                                     <p>New user here? <Link to="/register">Register</Link></p>
                                 </div>
                                 <input type="submit" value="Login" />
+                            </div>
+                            <div className="google__login">
+                                <h4>OR</h4>
+                                <button onClick={handleGoogle}>Continue With Google <FaGoogle /></button>
                             </div>
                         </div>
                     </form>

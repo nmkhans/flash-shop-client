@@ -8,6 +8,7 @@ import AddItem from '../../pages/AddItem/AddItem';
 import Register from './../../pages/Register/Register';
 import Login from './../../pages/Login/Login';
 import UserItem from '../../pages/UserItem/UserItem';
+import NotFound from './../../pages/NotFound/NotFound';
 
 
 const ApplicationRoutes = () => {
@@ -36,6 +37,7 @@ const ApplicationRoutes = () => {
             } />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 };

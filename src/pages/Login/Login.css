@@ -64,3 +64,26 @@
     text-decoration: none;
     color: #ff0000;
 }
+
+.google__login {
+    text-align: center;
+}
+
+.google__login h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.google__login button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    background: #fff;
+    color: #ff0000;
+    cursor: pointer;
+}
