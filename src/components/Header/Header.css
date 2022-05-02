@@ -73,13 +73,14 @@
 }
 
 .profile__menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #161515;
-    width: 250px;
-    padding: 15px;
-    border-radius: 5px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #161515;
+	width: 250px;
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #ff0000;
 }
 
 .profile__menu ul {
@@ -136,7 +137,23 @@
         outline: none;
         background: transparent;
         color: #fff;
-        font-size: 30px;
+        font-size: 25px;
         cursor: pointer;
+    }
+
+    .header__logo img {
+        width: 150px;
+        margin-top: 5px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+    .header__logo img {
+        width: 120px;
+        margin-top: 5px;
+    }
+
+    .mobile__menu .profile__menu {
+        right: -120%;
     }
 }
