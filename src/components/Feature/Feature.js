@@ -1,7 +1,9 @@
 import React from 'react';
 import './Feature.css';
+import { useNavigate } from 'react-router-dom';
 
 const Feature = () => {
+    const navigate = useNavigate();
     return (
         <div className="Feature">
             <div className="inner__feature">
@@ -11,8 +13,9 @@ const Feature = () => {
                             <h3>New Collection</h3>
                             <h2>All The leatest collection in one house.</h2>
                             <div className="feature__text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget. </p>
-                                <button>Browser Collection</button>
+                                <p>Countries best and latest model car's are available here. The best place to find your desire car in lot at best deal.</p>
+                                <button onClick={() => navigate('/manage-inventory')}>Browser Collection
+                                </button>
                             </div>
                         </div>
                         <div className="feature__detail">

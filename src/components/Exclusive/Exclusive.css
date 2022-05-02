@@ -1,0 +1,40 @@
+.Exclusive {
+    background: url('https://i.ibb.co/6w5sZsF/talia-1mb-B-9dqb8-M-unsplash-1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 120px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.Exclusive::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    z-index: -1;
+}
+
+.exclusive__content {
+    text-align: center;
+}
+
+.exclusive__box {
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    margin: 0 auto;
+    border: 2px solid #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.exclusive__box h4 {
+    font-weight: 500;
+    font-size: 17px;
+}

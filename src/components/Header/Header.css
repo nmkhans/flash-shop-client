@@ -8,6 +8,10 @@
     padding: 5px 0;
 }
 
+.mobile__menu {
+    display: none;
+}
+
 .header__logo img {
     width: 180px;
 }
@@ -61,10 +65,11 @@
 }
 
 .profile__button img {
-	width: 60px;
-	border-radius: 50px;
-	border: 2px solid #f00;
-	padding: 4px;
+    width: 60px;
+    border-radius: 50px;
+    border: 2px solid #f00;
+    padding: 4px;
+    color: #fff;
 }
 
 .profile__menu {
@@ -85,4 +90,53 @@
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+/*================ Responsive =================*/
+
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .desktop__menu {
+        display: none;
+    }
+
+    .mobile__menu {
+        display: block;
+    }
+
+    .mobile__menu .header__content {
+        position: relative;
+    }
+
+    .mobile__menu .header__nav {
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #161515;
+        width: 250px;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ff0000;
+    }
+
+    .mobile__menu .header__menu ul li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .mobile__menu .header__account {
+        margin-left: -20px;
+    }
+
+    .mobile__menu .header__menu__icon button {
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
 }
