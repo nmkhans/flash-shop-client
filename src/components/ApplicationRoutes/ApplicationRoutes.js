@@ -9,6 +9,7 @@ import Register from './../../pages/Register/Register';
 import Login from './../../pages/Login/Login';
 import UserItem from '../../pages/UserItem/UserItem';
 import NotFound from './../../pages/NotFound/NotFound';
+import Blog from './../../pages/Blog/Blog';
 
 
 const ApplicationRoutes = () => {
@@ -35,6 +36,7 @@ const ApplicationRoutes = () => {
                     <UserItem />
                 </RequireAuth>
             } />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
