@@ -34,3 +34,36 @@
     background: #ff0000;
     color: #fff;
 }
+
+/* ==================== Responsive ==================== */
+
+@media all and (min-width: 200px) and (max-width:991px) {
+    .collection__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .collection__content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .collection__title h2 {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .collection__button a {
+        padding: 10px 20px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+    .collection__title h2 {
+        font-size: 20px;
+    }
+
+    .singleCollection__detail button {
+        width: 120px;
+    }
+}

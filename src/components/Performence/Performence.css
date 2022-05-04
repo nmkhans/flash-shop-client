@@ -46,3 +46,52 @@
 .performance__right a:hover::after {
     width: 0;
 }
+
+/* ==================== Responsive =================== */
+
+@media all and (min-width: 200px) and (max-width:1200px) {
+    .performance__left h3 {
+        font-size: 35px;
+    }
+
+    .performance__right p {
+        width: 520px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width: 991px) {
+    .performance__left h3 {
+        font-size: 30px;
+    }
+
+    .performance__right p {
+        color: #d3d5d5;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 420px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+
+    .Performance {
+        padding: 60px 0;
+    }
+
+    .performance__content {
+        flex-direction: column;
+    }
+
+    .performance__left {
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+    .performance__right p {
+        color: #d3d5d5;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
