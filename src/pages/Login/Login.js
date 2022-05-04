@@ -12,6 +12,16 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         loginUser(email, password);
+
+        fetch('http://localhost:5000/auth', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({email: email})
+        })
+        .then(res => res.json())
+        .then(data => localStorage.setItem('access-token', JSON.stringify(data.token)))
     }
 
     const handleGoogle = (event) => {

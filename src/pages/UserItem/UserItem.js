@@ -13,7 +13,11 @@ const UserItem = () => {
 
     useEffect(() => {
         const url = `http://localhost:5000/useritem?email=${user.email}`;
-        fetch(url)
+        fetch(url, {
+            headers: {
+                authorization: `Bearer ${JSON.parse(localStorage.getItem('access-token'))}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -22,7 +26,7 @@ const UserItem = () => {
                 }
             })
 
-    }, [user.email, res, item])
+    }, [user?.email, res, item])
 
     const handleDelete = (id) => {
         MySwal.fire({
@@ -58,11 +62,15 @@ const UserItem = () => {
                 <div className="useritem__title">
                     <h2>My Items</h2>
                 </div>
-                <div className="useritem__content">
-                    {
-                        inventory.map(item => <InventoryItem key={item._id} item={item} handleDelete={handleDelete} />)
-                    }
-                </div>
+                {
+                    (inventory.length) && (
+                        <div className="useritem__content">
+                            {
+                                inventory?.map(item => <InventoryItem key={item._id} item={item} handleDelete={handleDelete} />)
+                            }
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

@@ -8,7 +8,6 @@ const AddItem = () => {
     const { user } = useFirebase();
     const [res, setRes] = useState({});
     const navigate = useNavigate();
-    console.log(res)
 
 
     const handleAddItem = (event) => {
