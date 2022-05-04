@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from "firebase/auth";
 import auth from '../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -29,7 +29,11 @@ const useFirebase = () => {
                     displayName: name,
                     photoURL: img,
                 });
+                sendEmailVerification(auth.currentUser)
                 toast('Registration successfull')
+                setTimeout(() => {
+                    toast('Verification mail send')
+                }, 2000);
                 navigate(from, { replace: true });
             })
     }
@@ -42,6 +46,17 @@ const useFirebase = () => {
                 setUser(user);
                 toast('Login Successfull')
                 navigate(from, { replace: true });
+            })
+            .catch(error => {
+                if(error.message === 'Firebase: Error (auth/invalid-email).') {
+                    toast('Invalid Email')
+                } else if (error.message === 'Firebase: Error (auth/user-not-found).') {
+                    toast("User Doesn't exist");
+                } else if (error.message === 'Firebase: Error (auth/wrong-password).') {
+                    toast("Password is Wrong");
+                }else if (error.message === 'Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests).') {
+                    toast("Your account is Disabled for too many failed attempt. Reset password or try again laiter.");
+                }
             })
     }
 

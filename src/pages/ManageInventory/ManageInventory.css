@@ -15,6 +15,11 @@
     padding-bottom: 3px;
 }
 
+.manageInventory__spinner {
+    text-align: center;
+    margin: 50px auto;
+} 
+
 .managInventory__button {
     text-align: right;
     margin: 50px 0;
@@ -33,6 +38,8 @@
     font-size: 15px;
     font-weight: 500;
 }
+
+
 
 .manageInventory__content {
     background: #161515;

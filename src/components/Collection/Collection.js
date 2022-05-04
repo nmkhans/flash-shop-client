@@ -7,7 +7,7 @@ import { css } from "@emotion/react";
 
 const Collection = () => {
     const [carsCollection, setCarsCollection] = useState([]);
-    let [color] = useState("#ff0000");
+    const [color] = useState("#ff0000");
     const override = css`
         display: block;
         margin: 0 auto;
@@ -19,7 +19,6 @@ const Collection = () => {
     }, [])
 
     const newCollection = carsCollection.slice(0, 6);
-    console.log(newCollection.length)
 
     return (
         <div className="Collection">

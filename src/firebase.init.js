@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBw1gIK8rRhE3SnmnfddHWyDiFWQmNoT0A",
-  authDomain: "nmk-flashshop.firebaseapp.com",
-  projectId: "nmk-flashshop",
-  storageBucket: "nmk-flashshop.appspot.com",
-  messagingSenderId: "42506763459",
-  appId: "1:42506763459:web:242ebe2b01ddff85917676"
+  apiKey: `${process.env.REACT_APP_apiKey}`,
+  authDomain: `${process.env.REACT_APP_authDomain}`,
+  projectId: `${process.env.REACT_APP_projectId}`,
+  storageBucket: `${process.env.REACT_APP_storageBucket}`,
+  messagingSenderId: `${process.env.REACT_APP_messagingSenderId}`,
+  appId: `${process.env.REACT_APP_appId}`
 };
 
 // Initialize Firebase
