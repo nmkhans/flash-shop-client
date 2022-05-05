@@ -19,7 +19,7 @@ const UserItem = () => {
     `;
 
     useEffect(() => {
-        const url = `http://localhost:5000/useritem?email=${user.email}`;
+        const url = `https://nmk-flashshop.herokuapp.com/useritem?email=${user.email}`;
         fetch(url, {
             headers: {
                 authorization: `Bearer ${JSON.parse(localStorage.getItem('access-token'))}`
@@ -46,7 +46,7 @@ const UserItem = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `http://localhost:5000/inventory/${id}`;
+                const url = `https://nmk-flashshop.herokuapp.com/inventory/${id}`;
                 fetch(url, {
                     method: "Delete"
                 })

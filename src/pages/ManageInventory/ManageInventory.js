@@ -18,7 +18,7 @@ const ManageInventory = () => {
     `;
 
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://nmk-flashshop.herokuapp.com/inventory')
             .then(res => res.json())
             .then(data => setInventory(data))
     }, [res])
@@ -34,7 +34,7 @@ const ManageInventory = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `http://localhost:5000/inventory/${id}`;
+                const url = `https://nmk-flashshop.herokuapp.com/inventory/${id}`;
                 fetch(url, {
                     method: "Delete"
                 })

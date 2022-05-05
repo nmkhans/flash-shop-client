@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import useFirebase from './../../hooks/useFirebase';
-import {FaGoogle} from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { loginUser, googleSignIn } = useFirebase();
@@ -13,15 +13,15 @@ const Login = () => {
         const password = event.target.password.value;
         loginUser(email, password);
 
-        fetch('http://localhost:5000/auth', {
+        fetch('https://nmk-flashshop.herokuapp.com/auth', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({email: email})
+            body: JSON.stringify({ email: email })
         })
-        .then(res => res.json())
-        .then(data => localStorage.setItem('access-token', JSON.stringify(data.token)))
+            .then(res => res.json())
+            .then(data => localStorage.setItem('access-token', JSON.stringify(data.token)))
     }
 
     const handleGoogle = (event) => {

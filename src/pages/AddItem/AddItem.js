@@ -19,9 +19,9 @@ const AddItem = () => {
         const supplier = event.target.brand.value;
         const img = event.target.img.value;
         const description = event.target.desc.value;
-        const item = {email, name, price, quantity, supplier, img, description};
+        const item = { email, name, price, quantity, supplier, img, description };
 
-        const url = `http://localhost:5000/inventory`;
+        const url = `https://nmk-flashshop.herokuapp.com/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -29,13 +29,13 @@ const AddItem = () => {
             },
             body: JSON.stringify(item)
         })
-        .then(res => res.json())
-        .then(data => {
-            setRes(data)
-            if(res.acknowledged === true) {
-                toast('Item Succeccfully Added');
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                setRes(data)
+                if (res.acknowledged === true) {
+                    toast('Item Succeccfully Added');
+                }
+            })
         event.target.reset();
         navigate('/manage-inventory')
     }

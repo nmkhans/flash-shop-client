@@ -10,7 +10,7 @@ const Inventory = () => {
 
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://nmk-flashshop.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setInventoryItem(data));
     }, [id, res]);
@@ -24,7 +24,7 @@ const Inventory = () => {
                 quantity: (quantity - 1)
             };
 
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://nmk-flashshop.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -45,7 +45,7 @@ const Inventory = () => {
             quantity: (quantity + amount),
         }
         console.log(newQuantity)
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://nmk-flashshop.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

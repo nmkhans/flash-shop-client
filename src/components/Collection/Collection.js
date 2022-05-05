@@ -13,7 +13,7 @@ const Collection = () => {
         margin: 0 auto;
     `;
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://nmk-flashshop.herokuapp.com/inventory')
             .then(res => res.json())
             .then(data => setCarsCollection(data))
     }, [])
