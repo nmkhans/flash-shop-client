@@ -3,6 +3,8 @@ import InventoryItem from '../../components/InventoryItem/InventoryItem';
 import './UserItem.css';
 import useFirebase from '../../hooks/useFirebase';
 import useAlert from './../../hooks/useAlert';
+import ScaleLoader from "react-spinners/ScaleLoader";
+import { css } from "@emotion/react";
 
 const UserItem = () => {
     const { user } = useFirebase();
@@ -10,6 +12,11 @@ const UserItem = () => {
     const [item, setItem] = useState(null);
     const [res, setRes] = useState({});
     const { MySwal } = useAlert();
+    const [color] = useState("#ff0000");
+    const override = css`
+        display: block;
+        margin: 0 auto;
+    `;
 
     useEffect(() => {
         const url = `http://localhost:5000/useritem?email=${user.email}`;
@@ -63,14 +70,18 @@ const UserItem = () => {
                     <h2>My Items</h2>
                 </div>
                 {
-                    (inventory.length) && (
-                        <div className="useritem__content">
+                    (inventory.length === 0) ?
+                        (<div className="useritem__content__spinner">
+                            <ScaleLoader color={color} size={500} height={100} width={15} radius={2} margin={5} css={override} />
+                        </div>) :
+                        (<div className="useritem__content">
                             {
                                 inventory?.map(item => <InventoryItem key={item._id} item={item} handleDelete={handleDelete} />)
                             }
-                        </div>
-                    )
+                        </div>)
                 }
+
+
             </div>
         </div>
     );

@@ -106,7 +106,7 @@ const Header = () => {
                                                 <LinkTo to="/services">Services</LinkTo>
                                             </li>
                                             <li>
-                                                <LinkTo to="/blogs">Blog</LinkTo>
+                                                <LinkTo to="/blog">Blog</LinkTo>
                                             </li>
                                         </ul>
                                     </nav>

@@ -64,3 +64,13 @@
     text-decoration: none;
     color: #ff0000;
 }
+
+/* ====================== Responsive ======================= */
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .register__form {
+        background: #161515;
+        width: 100%;
+        padding: 30px;
+    }
+}

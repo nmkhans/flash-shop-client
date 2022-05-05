@@ -40,3 +40,54 @@
     margin-top: 50px;
     border-radius: 5px;
 }
+
+.useritem__content__spinner {
+    text-align: center;
+    margin: 50px auto;
+}
+
+/* ==================== Responsive =================== */
+
+@media all and (min-width: 200px) and (max-width:1200px) {
+    .inventoryItem__content {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:991px) {
+
+    .useritem__title h2 {
+        font-size: 26px;
+    }
+
+    .inventoryItem__feature {
+        margin-right: 50px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+
+    .inventoryItem__content {
+        flex-direction: column;
+    }
+
+    .inventoryItem__detail {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .inventoryItem__description {
+        margin: 20px 0;
+    }
+
+    .inventoryItem__feature {
+        margin-right: 0;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+
+    .managInventory__button button {
+        margin: 9px 15px;
+    }
+}

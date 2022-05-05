@@ -4,7 +4,7 @@ import "./Blog.css";
 const Blog = () => {
     return (
         <div className="Blog">
-            <div className="inner__blog contianer">
+            <div className="inner__blog container">
                 <div className="blog__title">
                     <h2>Blogs</h2>
                 </div>

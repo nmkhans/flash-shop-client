@@ -61,7 +61,6 @@ const ManageInventory = () => {
                     <button onClick={() => navigate('/add-item')}>Add new Item</button>
                     <button>Empty Inventory</button>
                 </div>
-
                 {
                     (inventory.length === 0) ?
                         (<div className="manageInventory__spinner">
@@ -72,10 +71,6 @@ const ManageInventory = () => {
                             }
                         </div>)
                 }
-                <div className="">
-
-                </div>
-
             </div>
         </div>
     );

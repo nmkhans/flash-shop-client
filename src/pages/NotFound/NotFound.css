@@ -1,6 +1,7 @@
 .NotFound {
     padding: 180px 0;
     text-align: center;
+    height: 100vh;
 }
 
 .NotFound h2 {
@@ -10,5 +11,28 @@
 
 .NotFound p {
     font-size: 30px;
+}
 
+/* ================= Responsive ================= */
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .NotFound h2 {
+        font-size: 120px;
+        color: #ff0000;
+    }
+
+    .NotFound p {
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+    .NotFound h2 {
+        font-size: 100px;
+        color: #ff0000;
+    }
+
+    .NotFound p {
+        font-size: 16px;
+    }
 }

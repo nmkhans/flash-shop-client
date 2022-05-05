@@ -87,3 +87,12 @@
     color: #ff0000;
     cursor: pointer;
 }
+
+/* ====================== Responsive ======================= */
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .login__form {
+        background: #161515;
+        width: 100%;
+        padding: 30px;
+    }
+}

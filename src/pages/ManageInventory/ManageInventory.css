@@ -18,7 +18,7 @@
 .manageInventory__spinner {
     text-align: center;
     margin: 50px auto;
-} 
+}
 
 .managInventory__button {
     text-align: right;
@@ -46,4 +46,59 @@
     padding: 20px;
     margin-top: 50px;
     border-radius: 5px;
+}
+
+/* ==================== Responsive =================== */
+
+@media all and (min-width: 200px) and (max-width:1200px) {
+    .inventoryItem__content {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:991px) {
+
+    .manageInventory__title h2 {
+        font-size: 26px;
+    }
+
+    .inventoryItem__feature {
+        margin-right: 50px;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width: 768px) {
+
+    .managInventory__button {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .inventoryItem__content {
+        flex-direction: column;
+    }
+
+    .inventoryItem__detail {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .inventoryItem__description {
+        margin: 20px 0;
+    }
+
+    .inventoryItem__feature {
+        margin-right: 0;
+    }
+}
+
+@media all and (min-width: 200px) and (max-width:480px) {
+    .managInventory__button {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .managInventory__button button {
+        margin: 9px 15px;
+    }
 }
